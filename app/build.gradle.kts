@@ -1,11 +1,13 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+//    id("dagger.hilt.android.plugin")
 }
 
 android {
     namespace = "com.valance.testapi"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.valance.testapi"
@@ -50,7 +52,6 @@ android {
 }
 
 dependencies {
-
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.activity:activity-compose:1.8.2")
@@ -66,4 +67,30 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    //coil compose
+    implementation("io.coil-kt:coil-compose:2.2.2")
+
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.1")
+
+    //Dagger - Hilt
+    implementation("com.google.dagger:hilt-android:2.45")
+    kapt("com.google.dagger:hilt-android-compiler:2.45")
+    kapt("androidx.hilt:hilt-compiler:1.2.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+
+    //pading
+    implementation("androidx.paging:paging-runtime-ktx:3.3.0")
+    implementation("androidx.paging:paging-compose:3.3.0")
+
+    //retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-moshi:2.9.0")
+    implementation ("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3")
+
+    //room
+    implementation("androidx.room:room-ktx:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-paging:2.6.1")
 }
