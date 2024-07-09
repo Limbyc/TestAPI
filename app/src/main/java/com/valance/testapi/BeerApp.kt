@@ -1,4 +1,4 @@
-package com.valance.testapi.ui
+package com.valance.testapi
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

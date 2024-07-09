@@ -9,9 +9,9 @@ interface BeerApi {
     suspend fun getBeers(
         @Query("page") page: Int,
         @Query("per_page") pageCount: Int
-    ) : List<BeerDto>
+    ): List<BeerDto>
 
-    companion object{
-        const val BASE_URL = "https://api.punkai.com/v2/"
+    companion object {
+        const val BASE_URL = "https://api.punkapi.com/v2/"
     }
 }

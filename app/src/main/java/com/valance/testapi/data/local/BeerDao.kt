@@ -12,7 +12,7 @@ interface BeerDao {
     suspend fun upsertAll(beers: List<BeerEntity>)
 
     @Query("SELECT * FROM beerentity")
-    fun pagingSource() : PagingSource<Int, BeerEntity>
+    fun pagingSource(): PagingSource<Int, BeerEntity>
 
     @Query("DELETE FROM beerentity")
     suspend fun clearAll()

@@ -16,7 +16,7 @@ class BeerViewModel @Inject constructor(
     pager: Pager<Int, BeerEntity>
 ): ViewModel() {
 
-    val beerPadingFlow = pager
+    val beerPagingFlow = pager
         .flow
         .map { pagingData ->
             pagingData.map { it.toBeer() }

@@ -4,7 +4,7 @@ import com.valance.testapi.data.local.BeerEntity
 import com.valance.testapi.data.remote.BeerDto
 import com.valance.testapi.domain.Beer
 
-fun BeerDto.toBeerEntity(): BeerEntity{
+fun BeerDto.toBeerEntity(): BeerEntity {
     return BeerEntity(
         id = id,
         name = name,

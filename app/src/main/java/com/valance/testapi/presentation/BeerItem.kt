@@ -11,10 +11,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -31,17 +30,17 @@ import com.valance.testapi.ui.theme.TestApiTheme
 fun BeerItem(
     beer: Beer,
     modifier: Modifier = Modifier
-){
-    Card (
-       modifier = modifier,
-        elevation = CardDefaults.cardElevation(4.dp)
-    ){
+) {
+    Card(
+        modifier = modifier,
+        elevation = 4.dp
+    ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(IntrinsicSize.Max)
                 .padding(16.dp)
-        ){
+        ) {
             AsyncImage(
                 model = beer.imageUrl,
                 contentDescription = beer.name,
@@ -55,10 +54,10 @@ fun BeerItem(
                     .weight(3f)
                     .fillMaxHeight(),
                 verticalArrangement = Arrangement.Center
-            ){
+            ) {
                 Text(
                     text = beer.name,
-                    style = MaterialTheme.typography.labelMedium,
+                    style = MaterialTheme.typography.h6,
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(8.dp))
@@ -78,25 +77,24 @@ fun BeerItem(
                     text = "First brewed in ${beer.firstBrewed}",
                     modifier = Modifier.fillMaxWidth(),
                     textAlign = TextAlign.End,
-                    fontSize = 9.sp
+                    fontSize = 8.sp
                 )
             }
-
         }
     }
 }
 
 @Preview
 @Composable
-fun BeerItemPreview(){
-    TestApiTheme{
+fun BeerItemPreview() {
+    TestApiTheme {
         BeerItem(
             beer = Beer(
                 id = 1,
                 name = "Beer",
                 tagline = "This is a cool beer",
-                firstBrewed = "07/2022",
-                description = "This is a description for a beer. \nThis is a next line",
+                firstBrewed = "07/2023",
+                description = "This is a description for a beer. \nThis is the next line.",
                 imageUrl = null
             ),
             modifier = Modifier.fillMaxWidth()

@@ -1,7 +1,5 @@
 package com.valance.testapi.data.remote
 
-import android.app.ActivityManager.TaskDescription
-
 data class BeerDto(
     val id: Int,
     val name: String,
